@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://imgs.search.brave.com/a7TC_x0R5aueQPw9oj_8KA5UcnSs_G4nK6h0LNe0EU0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTY0/NjYwMjU0NS9waG90/by9zdG9ybS1jbG91/ZHMtYmFja2dyb3Vu/ZC53ZWJwP2I9MSZz/PTE3MDY2N2Emdz0w/Jms9MjAmYz1Ed2VC/UjVGRFEwS2hzTzJs/ZHRlbmxjNWZlak5D/VlJVc2hJQkg3MVZU/NVg4PQ') no-repeat center center fixed;
+    background-size: cover;
+    animation: fadeInBackground 1.5s ease-in-out;
+}
+
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    width: 450px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInCard 1s ease-in-out forwards;
+}
+
+@keyframes fadeInCard {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-card:hover {
+    transform: scale(1.05);
+}
+
+#city-input {
+    padding: 15px;
+    margin: 10px 0;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+    color: #333;
+}
+
+#city-input:focus {
+    outline: none;
+    border-color: #90caf9;
+}
+
+#city-input::placeholder {
+    color: #aaa;
+}
+
+#city-input-btn {
+    padding: 10px;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#city-input-btn:hover {
+    background-color: #1565C0;
+}
+
+#weather-info {
+    display: none;
+    opacity: 0;
+    animation: fadeInWeatherInfo 1s ease-in-out forwards;
+}
+
+@keyframes fadeInWeatherInfo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#hourly-weather {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.hourly-forecast {
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.hourly-forecast .time {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.hourly-forecast .temp {
+    font-size: 16px;
+}
+
+.hourly-forecast .description {
+    font-size: 14px;
+}
+
+.hourly-forecast .wind-humidity {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#city-name {
+    color: #ff9800; /* Orange color for city name */
+}
